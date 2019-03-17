@@ -28,7 +28,8 @@ head.append("ConfID")
 
 for row in teams:
     for conf in conferences:
-        if conf[1] == row[2]:
+        if conf[1] == (row[1])[:1]:
+
             row.append(conf[0])
 
 
