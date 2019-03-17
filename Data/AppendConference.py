@@ -23,7 +23,7 @@ with open('TeamConferencesNumerical.csv') as confDataFile:
             print(row)
             head = row
             first = False
-            
+
 head.append("Conf ID")
 
 for row in teams:
