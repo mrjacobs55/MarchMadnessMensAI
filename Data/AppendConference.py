@@ -13,7 +13,7 @@ with open('Conferences.csv') as confDataFile:
 
 teams = []
 head = []
-with open('TeamConferencesNumerical.csv') as confDataFile:
+with open('ConferenceTourneyGames.csv') as confDataFile:
     teamsFile = csv.reader(confDataFile)
     first = True
     for row in teamsFile:
@@ -24,7 +24,7 @@ with open('TeamConferencesNumerical.csv') as confDataFile:
             head = row
             first = False
 
-head.append("Conf ID")
+head.append("ConfID")
 
 for row in teams:
     for conf in conferences:
@@ -32,8 +32,7 @@ for row in teams:
             row.append(conf[0])
 
 
-
-with open('TeamConferenceID.csv', 'w') as IDdataFile:
+with open('ConferenceTourneyGamesID.csv', 'w') as IDdataFile:
     write = csv.writer(IDdataFile)
     first = True
     for row in teams:
