@@ -28,13 +28,12 @@ with open('NCAATourneyDetailedResults.csv') as file:
             first = False
 
 for row in season:
-    with open("Season+TeamID/" + row[0] + "+" + row[2] + ".csv", 'w') as winningTeam:
+    with open("Season+TeamID/" + row[0] + "+" + row[2] + ".csv", 'a') as winningTeam:
         write = csv.writer(winningTeam)
-        winGame = [row[1], row[3], row[6], row[7], row[8], row[9], row[10], row[11],
-                   row[12], row[13], row[14], row[15], row[16], row[17],
-                   row[18], row[19], row[20], 1]
+        winGame = [row[1], row[3], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14], row[15],
+                   row[16], row[17], row[18], row[19], row[20], 1]
         write.writerow(winGame)
-    with open("Season+TeamID/" + row[0] + "+" + row[4] + ".csv", 'w') as losingTeam:
+    with open("Season+TeamID/" + row[0] + "+" + row[4] + ".csv", 'a') as losingTeam:
         write = csv.writer(losingTeam)
         location = row[6]
         if location == 72:
@@ -44,8 +43,6 @@ for row in season:
                 location = 72
             else:
                 location = 78
-        lossGame = [row[3], location, row[7], row[21], row[22],
-                    row[23], row[24], row[25], row[26], row[27],
-                    row[28], row[29], row[30], row[31],
-                    row[32], row[33], -1]
+        lossGame = [row[1], row[3], location, row[7], row[21], row[22], row[23], row[24], row[25], row[26], row[27],
+                    row[28], row[29], row[30], row[31], row[32], row[33], -1]
         write.writerow(lossGame)
