@@ -5,7 +5,7 @@ import csv
 #
 
 season = []
-with open('RegularSeasonDetailedResults.csv') as file:
+with open('WRegularSeasonDetailedResults.csv') as file:
     read = csv.reader(file)
     first = True
 
@@ -22,7 +22,7 @@ with open('RegularSeasonDetailedResults.csv') as file:
             print(game)
             first = False
 
-with open('NCAATourneyDetailedResults.csv') as file:
+with open('WNCAATourneyDetailedResults.csv') as file:
     read = csv.reader(file)
     first = True
 
@@ -42,21 +42,22 @@ with open('NCAATourneyDetailedResults.csv') as file:
                     row[25][1:], row[26][1:], row[27][1:], row[28][1:], row[29][1:], row[30][1:], row[31][1:],
                     row[32][1:], row[33][1:], "-1 loss, 1 win"]
             print(game)
-        with open('header.csv', 'w') as headerFile:
+        with open('WSeason+TeamID/header.csv', 'w') as headerFile:
             write = csv.writer(headerFile)
             write.writerow(game)
 
             first = False
 
 
-''' Only Uncomment if you want to edit/create the data files
+# Only Uncomment if you want to edit/create the data files
+'''
 for row in season:
-    with open("Season+TeamID/" + row[0] + "+" + row[2] + ".csv", 'a') as winningTeam:
+    with open("WSeason+TeamID/" + row[0] + "+" + row[2] + ".csv", 'a') as winningTeam:
         write = csv.writer(winningTeam)
         winGame = [row[1], row[3], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14], row[15],
                    row[16], row[17], row[18], row[19], row[20], 1]
         write.writerow(winGame)
-    with open("Season+TeamID/" + row[0] + "+" + row[4] + ".csv", 'a') as losingTeam:
+    with open("WSeason+TeamID/" + row[0] + "+" + row[4] + ".csv", 'a') as losingTeam:
         write = csv.writer(losingTeam)
         location = row[6]
         if location == 72:
